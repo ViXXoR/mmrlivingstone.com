@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Matthew Livingstone. Software developer, hardware tinkerer, handyman in training.">
+
+		<title>Matthew Livingstone, Developer</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/bulma.css">
+
+		<!--
+		<meta property="og:url" content="https://mmrlivingstone.com">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Matthew Livingstone, Developer">
+		<meta property="og:image" content="http://bulma.io/images/bulma-banner.png">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:description" content="">
+		-->
+
+		<!--
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@jgthms">
+		<meta name="twitter:creator" content="@jgthms">
+		<meta name="twitter:title" content="Bulma: a modern CSS framework based on Flexbox">
+		<meta name="twitter:image" content="http://bulma.io/images/bulma-banner.png">
+		<meta name="twitter:description" content="Matthew Livingstone. Software developer, hardware tinkerer, handyman in training.">
+		-->
+
+		<!--
+		<link rel="apple-touch-icon" sizes="180x180" href="http://bulma.io/favicons/apple-touch-icon.png?v=201609251738">
+		<link rel="icon" type="image/png" href="http://bulma.io/favicons/favicon-32x32.png?v=201609251738" sizes="32x32">
+		<link rel="icon" type="image/png" href="http://bulma.io/favicons/favicon-16x16.png?v=201609251738" sizes="16x16">
+		<link rel="manifest" href="http://bulma.io/favicons/manifest.json?v=201609251738">
+		<link rel="mask-icon" href="http://bulma.io/favicons/safari-pinned-tab.svg?v=201609251738" color="#00d1b2">
+		<link rel="shortcut icon" href="http://bulma.io/favicons/favicon.ico?v=201609251738">
+
+
+		<meta name="msapplication-config" content="http://bulma.io/favicons/browserconfig.xml?v=201609251738">
+		<meta name="theme-color" content="#000000">
+		-->
+
+		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+		<script type="text/javascript" charset="utf-8" >
+			/*
+			* docReady support
+			* Copyright (c) 2014, John Friend
+			*/
+			(function(funcName, baseObj) {
+			    "use strict";
+			    // The public function name defaults to window.docReady
+			    // but you can modify the last line of this function to pass in a different object or method name
+			    // if you want to put them in a different namespace and those will be used instead of 
+			    // window.docReady(...)
+			    funcName = funcName || "docReady";
+			    baseObj = baseObj || window;
+			    var readyList = [];
+			    var readyFired = false;
+			    var readyEventHandlersInstalled = false;
+			    
+			    // call this when the document is ready
+			    // this function protects itself against being called more than once
+			    function ready() {
+			        if (!readyFired) {
+			            // this must be set to true before we start calling callbacks
+			            readyFired = true;
+			            for (var i = 0; i < readyList.length; i++) {
+			                // if a callback here happens to add new ready handlers,
+			                // the docReady() function will see that it already fired
+			                // and will schedule the callback to run right after
+			                // this event loop finishes so all handlers will still execute
+			                // in order and no new ones will be added to the readyList
+			                // while we are processing the list
+			                readyList[i].fn.call(window, readyList[i].ctx);
+			            }
+			            // allow any closures held by these functions to free
+			            readyList = [];
+			        }
+			    }
+			    
+			    function readyStateChange() {
+			        if ( document.readyState === "complete" ) {
+			            ready();
+			        }
+			    }
+			    
+			    // This is the one public interface
+			    // docReady(fn, context);
+			    // the context argument is optional - if present, it will be passed
+			    // as an argument to the callback
+			    baseObj[funcName] = function(callback, context) {
+			        // if ready has already fired, then just schedule the callback
+			        // to fire asynchronously, but right away
+			        if (readyFired) {
+			            setTimeout(function() {callback(context);}, 1);
+			            return;
+			        } else {
+			            // add the function and context to the list
+			            readyList.push({fn: callback, ctx: context});
+			        }
+			        // if document already ready to go, schedule the ready function to run
+			        // IE only safe when readyState is "complete", others safe when readyState is "interactive"
+			        if (document.readyState === "complete" || (!document.attachEvent && document.readyState === "interactive")) {
+			            setTimeout(ready, 1);
+			        } else if (!readyEventHandlersInstalled) {
+			            // otherwise if we don't have event handlers installed, install them
+			            if (document.addEventListener) {
+			                // first choice is DOMContentLoaded event
+			                document.addEventListener("DOMContentLoaded", ready, false);
+			                // backup is window load event
+			                window.addEventListener("load", ready, false);
+			            } else {
+			                // must be IE
+			                document.attachEvent("onreadystatechange", readyStateChange);
+			                window.attachEvent("onload", ready);
+			            }
+			            readyEventHandlersInstalled = true;
+			        }
+			    }
+			})("docReady", window);
+
+			docReady(function() {
+		    	bodyText = document.getElementById('body-text');
+
+				linkButtons.push(document.getElementById('home-link'));
+				linkButtons.push(document.getElementById('about-link'));
+				linkButtons.push(document.getElementById('services-link'));
+				linkButtons.push(document.getElementById('work-link'));
+				linkButtons.push(document.getElementById('contact-link'));
+
+				getPage('home');
+			});
+		</script>
+	</head>
+
+	<body class="layout-documentation page-layout" cz-shortcut-listen="true" style="zoom: 1;">
+		<section class="hero is-fullheight"><!--is-primary-->
+			<div class="hero-head" id="header-menu">
+				<div class="container">
+					<nav class="nav">
+						<div class="nav-left">
+							<a class="nav-item is-brand" href="https://mmrlivingstone.com/">
+								<p>Matthew Livingstone</p>
+							</a>
+						</div>
+
+						<div class="nav-center">
+							<!--
+							<a class="nav-item" href="https://github.com/jgthms/bulma">
+								<span class="icon">
+									<i class="fa fa-github"></i>
+								</span>
+							</a>
+							<a class="nav-item" href="https://twitter.com/jgthms">
+								<span class="icon">
+									<i class="fa fa-twitter"></i>
+								</span>
+							</a>
+							-->
+						</div>
+
+						<!--
+						<span id="nav-toggle" class="nav-toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+						</span>
+
+						<div id="nav-menu" class="nav-right nav-menu">
+							<a class="nav-item is-active" href="https://mmrlivingstone.com/">
+								Home
+							</a>
+							<a class="nav-item " href="/documentation/overview/start/">
+								Documentation
+							</a>
+							<a class="nav-item " href="http://bulma.io/blog/">
+								Blog
+							</a>
+						</div>
+						-->
+					</nav>
+				</div>
+			</div>
+
+			<div class="hero-body" id="body-text">
+				<!--
+				<div class="container">
+					<div class="columns is-vcentered">
+						<div class="column">
+							<p class="title is-1">
+							Matthew Livingstone
+							</p>
+							<p class="subtitle is-3">
+							Software developer, hardware tinkerer, handyman in training
+							</p>
+							<p class="subtitle">
+							I'm a software developer from Sudbury, Ontario. I have experience in the entire stack, but my expertise is in frontend and backend development.
+							</p>
+							<p class="subtitle">
+							I have worked with startups, corporate businesses, and non-profit organizations.
+							</p>
+							<p class="subtitle">
+							I have developed applications for the Web, Android, iOS, Windows, and Linux.
+							</p>
+						</div>
+					</div>
+				</div>
+				-->
+			</div>
+
+			<div class="hero-foot">
+				<nav class="tabs">
+					<div class="container">
+						<ul>
+							<li id="home-link">
+								<a href="#" onClick="return getPage('home');">Home</a>
+							</li>
+							<li id="about-link">
+								<a href="#" onClick="return getPage('about');">More About Me</a>
+							</li>
+							<li id="services-link">
+								<a href="#" onClick="return getPage('services');">Services</a>
+							</li>
+							<li id="work-link">
+								<a href="#" onClick="return getPage('work');">My Work</a>
+							</li>
+							<li id="contact-link">
+								<a href="#" onClick="return getPage('contact');">Contact</a>
+							</li>
+							<li id="resume-link">
+								<a href="resume/MatthewLivingstone_Developer.pdf">Download Resume</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container">
+					<div style="margin-bottom: 50px;"></div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
