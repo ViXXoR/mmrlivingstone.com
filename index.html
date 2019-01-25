@@ -11,38 +11,18 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/bulma.css">
 
-		<!--
-		<meta property="og:url" content="https://mmrlivingstone.com">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Matthew Livingstone, Developer">
-		<meta property="og:image" content="http://bulma.io/images/bulma-banner.png">
-		<meta property="og:image:type" content="image/png">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
-		<meta property="og:description" content="">
-		-->
+		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 
-		<!--
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@jgthms">
-		<meta name="twitter:creator" content="@jgthms">
-		<meta name="twitter:title" content="Bulma: a modern CSS framework based on Flexbox">
-		<meta name="twitter:image" content="http://bulma.io/images/bulma-banner.png">
-		<meta name="twitter:description" content="Matthew Livingstone. Software developer, hardware tinkerer, handyman in training.">
-		-->
+		<style>
+			body {
+				font-family: 'Arimo', sans-serif;
+				line-height: 1.4em;
+			}
 
-		<!--
-		<link rel="apple-touch-icon" sizes="180x180" href="http://bulma.io/favicons/apple-touch-icon.png?v=201609251738">
-		<link rel="icon" type="image/png" href="http://bulma.io/favicons/favicon-32x32.png?v=201609251738" sizes="32x32">
-		<link rel="icon" type="image/png" href="http://bulma.io/favicons/favicon-16x16.png?v=201609251738" sizes="16x16">
-		<link rel="manifest" href="http://bulma.io/favicons/manifest.json?v=201609251738">
-		<link rel="mask-icon" href="http://bulma.io/favicons/safari-pinned-tab.svg?v=201609251738" color="#00d1b2">
-		<link rel="shortcut icon" href="http://bulma.io/favicons/favicon.ico?v=201609251738">
-
-
-		<meta name="msapplication-config" content="http://bulma.io/favicons/browserconfig.xml?v=201609251738">
-		<meta name="theme-color" content="#000000">
-		-->
+			.subtitle {
+				line-height: 1.5em;
+			}
+		</style>
 
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 		<script type="text/javascript" charset="utf-8" >
@@ -129,7 +109,7 @@
 				linkButtons.push(document.getElementById('home-link'));
 				linkButtons.push(document.getElementById('about-link'));
 				linkButtons.push(document.getElementById('services-link'));
-				linkButtons.push(document.getElementById('work-link'));
+				//linkButtons.push(document.getElementById('work-link'));
 				linkButtons.push(document.getElementById('contact-link'));
 
 				getPage('home');
@@ -149,67 +129,13 @@
 						</div>
 
 						<div class="nav-center">
-							<!--
-							<a class="nav-item" href="https://github.com/jgthms/bulma">
-								<span class="icon">
-									<i class="fa fa-github"></i>
-								</span>
-							</a>
-							<a class="nav-item" href="https://twitter.com/jgthms">
-								<span class="icon">
-									<i class="fa fa-twitter"></i>
-								</span>
-							</a>
-							-->
 						</div>
 
-						<!--
-						<span id="nav-toggle" class="nav-toggle">
-						<span></span>
-						<span></span>
-						<span></span>
-						</span>
-
-						<div id="nav-menu" class="nav-right nav-menu">
-							<a class="nav-item is-active" href="https://mmrlivingstone.com/">
-								Home
-							</a>
-							<a class="nav-item " href="/documentation/overview/start/">
-								Documentation
-							</a>
-							<a class="nav-item " href="http://bulma.io/blog/">
-								Blog
-							</a>
-						</div>
-						-->
 					</nav>
 				</div>
 			</div>
 
 			<div class="hero-body" id="body-text">
-				<!--
-				<div class="container">
-					<div class="columns is-vcentered">
-						<div class="column">
-							<p class="title is-1">
-							Matthew Livingstone
-							</p>
-							<p class="subtitle is-3">
-							Software developer, hardware tinkerer, handyman in training
-							</p>
-							<p class="subtitle">
-							I'm a software developer from Sudbury, Ontario. I have experience in the entire stack, but my expertise is in frontend and backend development.
-							</p>
-							<p class="subtitle">
-							I have worked with startups, corporate businesses, and non-profit organizations.
-							</p>
-							<p class="subtitle">
-							I have developed applications for the Web, Android, iOS, Windows, and Linux.
-							</p>
-						</div>
-					</div>
-				</div>
-				-->
 			</div>
 
 			<div class="hero-foot">
@@ -225,14 +151,16 @@
 							<li id="services-link">
 								<a href="#" onClick="return getPage('services');">Services</a>
 							</li>
+							<!--
 							<li id="work-link">
 								<a href="#" onClick="return getPage('work');">My Work</a>
 							</li>
+							-->
 							<li id="contact-link">
 								<a href="#" onClick="return getPage('contact');">Contact</a>
 							</li>
 							<li id="resume-link">
-								<a href="resume/MatthewLivingstone_Developer.pdf">Download Resume</a>
+								<a href="resume/MatthewLivingstone_NoPhone_Jan2019.pdf">Download Resume</a>
 							</li>
 						</ul>
 					</div>
