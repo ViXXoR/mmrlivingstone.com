@@ -22,10 +22,12 @@ function getPage(page) {
 	  if (this.status >= 200 && this.status < 400) {
 	    // Success!
 	    bodyText.innerHTML = this.response;
+	    document.body.scrollTop = document.documentElement.scrollTop = 0; //bodyText.scrollTop = 0;
 	  } else {
 	    // We reached our target server, but it returned an error
 	    if(this.response.length > 0) {
 	    	bodyText.innerHTML = this.response;
+                document.body.scrollTop = document.documentElement.scrollTop = 0; //bodyText.scrollTop = 0;
 	    }
 	  }
 	};
